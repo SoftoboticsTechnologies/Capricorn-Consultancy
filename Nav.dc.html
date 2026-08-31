@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+  body { margin: 0; font-family: Inter, Helvetica, Arial, sans-serif; color: #0D1B2A; background: #F6F7F9; -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; }
+  a { color: #1E3A8A; text-decoration: none; }
+  a:hover { color: #0EA5AA; }
+  h1, h2, h3, h4 { font-family: Poppins, Helvetica, Arial, sans-serif; font-weight: 700; text-wrap: pretty; margin: 0; letter-spacing: -0.4px; }
+  p { text-wrap: pretty; }
+  img { max-width: 100%; }
+  input, textarea { font-family: Inter, Helvetica, Arial, sans-serif; }
+  input:focus, textarea:focus { outline: none; border-color: #1E3A8A; box-shadow: 0 0 0 3px rgba(30,58,138,0.12); }
+  @keyframes capricorn-modal-in { from { opacity: 0; transform: translateY(18px) scale(0.98); } to { opacity: 1; transform: none; } }
+  @keyframes capricorn-fade-in { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes capricorn-drop-in { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+</style>
+</helmet>
+<header style="position: sticky; top: 0; zIndex: 100; width: 100%; background: rgba(246,247,249,0.86); backdropFilter: blur(14px); borderBottom: 1px solid #E9ECF2;">
+  <nav aria-label="Main navigation" style="maxWidth: 1240px; margin: 0 auto; padding: 16px 22px; display: flex; alignItems: center; gap: 20px;">
+    <a href="index.html" aria-label="Capricorn Consultancy home" style="display: flex; alignItems: center; flexShrink: 0; marginRight: auto;">
+      <img src="assets/capricorn-logo.png" alt="Capricorn Consultancy logo: business consultancy and software solutions partner" style="height: 48px; width: auto; display: block;">
+    </a>
+    <sc-if value="{{ showDesktop }}" hint-placeholder-val="{{ true }}">
+      <div style="position: absolute; left: 50%; transform: translateX(-50%); display: flex; alignItems: center; gap: 30px;">
+        <a href="index.html" style="fontSize: 14.5px; fontWeight: 500; paddingBottom: 4px; borderBottom: 2px solid {{ homeLine }}; color: {{ homeColor }}; whiteSpace: nowrap;" style-hover="color: #0EA5AA;">Home</a>
+        <a href="About.dc.html" style="fontSize: 14.5px; fontWeight: 500; paddingBottom: 4px; borderBottom: 2px solid {{ aboutLine }}; color: {{ aboutColor }}; whiteSpace: nowrap;" style-hover="color: #0EA5AA;">About Us</a>
+        <a href="Services.dc.html" style="fontSize: 14.5px; fontWeight: 500; paddingBottom: 4px; borderBottom: 2px solid {{ servicesLine }}; color: {{ servicesColor }}; whiteSpace: nowrap;" style-hover="color: #0EA5AA;">Services</a>
+        <a href="Features.dc.html" style="fontSize: 14.5px; fontWeight: 500; paddingBottom: 4px; borderBottom: 2px solid {{ featuresLine }}; color: {{ featuresColor }}; whiteSpace: nowrap;" style-hover="color: #0EA5AA;">Features</a>
+        <a href="Enterprise.dc.html" style="fontSize: 14.5px; fontWeight: 500; paddingBottom: 4px; borderBottom: 2px solid {{ enterpriseLine }}; color: {{ enterpriseColor }}; whiteSpace: nowrap;" style-hover="color: #0EA5AA;">Enterprise</a>
+        <a href="Contact.dc.html" style="fontSize: 14.5px; fontWeight: 500; paddingBottom: 4px; borderBottom: 2px solid {{ contactLine }}; color: {{ contactColor }}; whiteSpace: nowrap;" style-hover="color: #0EA5AA;">Contact Us</a>
+      </div>
+      <div style="display: flex; alignItems: center; flexShrink: 0;">
+        <button type="button" data-enquiry="true" style="background: #0D1B2A; color: #ffffff; padding: 13px 26px; borderRadius: 8px; fontSize: 14.5px; fontWeight: 600; fontFamily: Poppins, Helvetica, Arial, sans-serif; border: none; cursor: pointer; transition: background 0.2s ease;" style-hover="background: #1E3A8A;">Get in Touch</button>
+      </div>
+    </sc-if>
+    <sc-if value="{{ showMobile }}" hint-placeholder-val="{{ false }}">
+      <div style="display: flex; alignItems: center; gap: 10px;">
+        <button type="button" data-enquiry="true" style="background: #0D1B2A; color: #ffffff; padding: 12px 20px; borderRadius: 8px; fontSize: 14px; fontWeight: 600; fontFamily: Poppins, Helvetica, Arial, sans-serif; border: none; cursor: pointer;" style-hover="background: #1E3A8A;">Get in Touch</button>
+        <button type="button" aria-label="Toggle navigation menu" aria-expanded="{{ isOpen }}" onClick="{{ toggle }}" style="width: 46px; height: 46px; display: flex; alignItems: center; justifyContent: center; background: #ffffff; border: 1px solid #E9ECF2; borderRadius: 8px; color: #0D1B2A; fontSize: 19px; cursor: pointer;">
+          <i class="{{ burgerIcon }}"></i>
+        </button>
+      </div>
+    </sc-if>
+  </nav>
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="borderTop: 1px solid #E9ECF2; background: #ffffff; padding: 14px 22px 22px; display: flex; flexDirection: column; gap: 4px;">
+      <a href="index.html" style="padding: 14px 12px; fontSize: 16px; fontWeight: 500; color: #0D1B2A; borderRadius: 12px;" style-hover="background: #F1F4F9; color: #1E3A8A;">Home</a>
+      <a href="About.dc.html" style="padding: 14px 12px; fontSize: 16px; fontWeight: 500; color: #0D1B2A; borderRadius: 8px;" style-hover="background: #F1F4F9; color: #1E3A8A;">About Us</a>
+      <a href="Services.dc.html" style="padding: 14px 12px; fontSize: 16px; fontWeight: 500; color: #0D1B2A; borderRadius: 8px;" style-hover="background: #F1F4F9; color: #1E3A8A;">Services</a>
+      <a href="Features.dc.html" style="padding: 14px 12px; fontSize: 16px; fontWeight: 500; color: #0D1B2A; borderRadius: 8px;" style-hover="background: #F1F4F9; color: #1E3A8A;">Features</a>
+      <a href="Enterprise.dc.html" style="padding: 14px 12px; fontSize: 16px; fontWeight: 500; color: #0D1B2A; borderRadius: 8px;" style-hover="background: #F1F4F9; color: #1E3A8A;">Enterprise</a>
+      <a href="Contact.dc.html" style="padding: 14px 12px; fontSize: 16px; fontWeight: 500; color: #0D1B2A; borderRadius: 12px;" style-hover="background: #F1F4F9; color: #1E3A8A;">Contact Us</a>
+    </div>
+  </sc-if>
+</header>
+<sc-if value="{{ modalOpen }}" hint-placeholder-val="{{ false }}">
+  <div role="dialog" aria-modal="true" aria-label="Enquiry form" onClick="{{ backdropClick }}" style="position: fixed; inset: 0; zIndex: 300; background: rgba(9,16,26,0.62); backdropFilter: blur(6px); display: flex; alignItems: flex-start; justifyContent: center; padding: 24px 18px; overflowY: auto; animation: capricorn-fade-in 0.18s ease;">
+    <div onClick="{{ stop }}" style="width: 100%; maxWidth: 520px; marginTop: 5vh; marginBottom: 40px; background: #ffffff; borderRadius: 24px; padding: clamp(26px, 4vw, 38px); boxShadow: 0 40px 90px rgba(9,16,26,0.4); animation: capricorn-modal-in 0.24s cubic-bezier(0.2, 0.8, 0.2, 1);">
+      <div style="display: flex; alignItems: flex-start; justifyContent: space-between; gap: 18px; marginBottom: 8px;">
+        <div>
+          <span style="display: inline-flex; alignItems: center; gap: 8px; fontSize: 12px; fontWeight: 600; letterSpacing: 1.4px; textTransform: uppercase; color: #0EA5AA;"><span style="width: 6px; height: 6px; borderRadius: 50%; background: #0EA5AA;"></span>Enquiry</span>
+          <h2 style="fontSize: 25px; lineHeight: 1.25; marginTop: 12px;">Send us a message</h2>
+        </div>
+        <button type="button" aria-label="Close enquiry form" onClick="{{ close }}" style="flexShrink: 0; width: 40px; height: 40px; borderRadius: 50%; background: #F1F4F9; border: none; color: #0D1B2A; fontSize: 16px; cursor: pointer; display: flex; alignItems: center; justifyContent: center;" style-hover="background: #E4E9F1;"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <p style="margin: 0 0 22px; fontSize: 14.5px; lineHeight: 1.7; color: #6B7280;">Fill this in and your email application opens with the details ready to send to capricornconsultancy@outlook.com.</p>
+      <form onSubmit="{{ submit }}" style="display: grid; gap: 14px;">
+        <label style="display: grid; gap: 7px;">
+          <span style="fontSize: 13.5px; fontWeight: 600;">Name</span>
+          <input name="name" type="text" required="true" placeholder="Your full name" style="width: 100%; padding: 13px 15px; fontSize: 15px; color: #0D1B2A; background: #FAFBFC; border: 1px solid #E1E6EE; borderRadius: 12px;">
+        </label>
+        <label style="display: grid; gap: 7px;">
+          <span style="fontSize: 13.5px; fontWeight: 600;">Email</span>
+          <input name="email" type="email" required="true" placeholder="you@company.com" style="width: 100%; padding: 13px 15px; fontSize: 15px; color: #0D1B2A; background: #FAFBFC; border: 1px solid #E1E6EE; borderRadius: 12px;">
+        </label>
+        <label style="display: grid; gap: 7px;">
+          <span style="fontSize: 13.5px; fontWeight: 600;">Company name</span>
+          <input name="company" type="text" placeholder="Your company or organisation" style="width: 100%; padding: 13px 15px; fontSize: 15px; color: #0D1B2A; background: #FAFBFC; border: 1px solid #E1E6EE; borderRadius: 8px;">
+        </label>
+        <label style="display: grid; gap: 7px;">
+          <span style="fontSize: 13.5px; fontWeight: 600;">Phone</span>
+          <input name="phone" type="tel" placeholder="Contact number" style="width: 100%; padding: 13px 15px; fontSize: 15px; color: #0D1B2A; background: #FAFBFC; border: 1px solid #E1E6EE; borderRadius: 12px;">
+        </label>
+        <label style="display: grid; gap: 7px;">
+          <span style="fontSize: 13.5px; fontWeight: 600;">Message</span>
+          <textarea name="message" rows="4" required="true" placeholder="What would you like to discuss?" style="width: 100%; padding: 13px 15px; fontSize: 15px; color: #0D1B2A; background: #FAFBFC; border: 1px solid #E1E6EE; borderRadius: 12px; resize: vertical;"></textarea>
+        </label>
+        <button type="submit" style="width: 100%; padding: 15px 24px; background: #0D1B2A; color: #ffffff; border: none; borderRadius: 8px; fontSize: 15.5px; fontWeight: 600; fontFamily: Poppins, Helvetica, Arial, sans-serif; cursor: pointer; transition: background 0.2s ease;" style-hover="background: #1E3A8A;">Send Message</button>
+        <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+          <p style="margin: 0; fontSize: 13.5px; lineHeight: 1.7; color: #0F766E; background: #E6FBFB; border: 1px solid #A9E6E8; borderRadius: 12px; padding: 13px 15px;">Your email application should now be open with the message ready to send. If nothing opened, write to us at capricornconsultancy@outlook.com.</p>
+        </sc-if>
+      </form>
+    </div>
+  </div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1240,&quot;height&quot;:120},&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;about&quot;,&quot;services&quot;,&quot;contact&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { mobile: false, open: false, modal: false, sent: false };
+
+  componentDidMount() {
+    this.sync = () => {
+      const mobile = window.innerWidth <= 1120;
+      if (mobile !== this.state.mobile) this.setState({ mobile: mobile, open: false });
+    };
+    this.sync();
+    window.addEventListener('resize', this.sync);
+    if (window.visualViewport) window.visualViewport.addEventListener('resize', this.sync);
+    requestAnimationFrame(this.sync);
+    this.timers = [100, 400, 900, 1800].map((ms) => setTimeout(this.sync, ms));
+    this.ro = new ResizeObserver(this.sync);
+    this.ro.observe(document.body);
+
+    this.lockScroll = (on) => {
+      const de = document.documentElement;
+      if (on) {
+        this.scrollY = window.scrollY || de.scrollTop || 0;
+        de.style.overflow = 'hidden';
+        document.body.style.overflow = 'hidden';
+      } else {
+        de.style.overflow = '';
+        document.body.style.overflow = '';
+        if (typeof this.scrollY === 'number') window.scrollTo(0, this.scrollY);
+      }
+    };
+    this.openModal = () => { this.lockScroll(true); this.setState({ modal: true, sent: false, open: false }); };
+    this.closeModal = () => { this.lockScroll(false); this.setState({ modal: false }); };
+    this.onDocClick = (e) => {
+      const t = e.target && e.target.closest ? e.target.closest('[data-enquiry]') : null;
+      if (t) { e.preventDefault(); this.openModal(); }
+    };
+    document.addEventListener('click', this.onDocClick);
+    this.onKey = (e) => { if (e.key === 'Escape') this.closeModal(); };
+    document.addEventListener('keydown', this.onKey);
+    this.onOpenEvent = () => this.openModal();
+    window.addEventListener('capricorn:open-enquiry', this.onOpenEvent);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.sync);
+    if (window.visualViewport) window.visualViewport.removeEventListener('resize', this.sync);
+    (this.timers || []).forEach(clearTimeout);
+    if (this.ro) this.ro.disconnect();
+    document.removeEventListener('click', this.onDocClick);
+    document.removeEventListener('keydown', this.onKey);
+    window.removeEventListener('capricorn:open-enquiry', this.onOpenEvent);
+    document.body.style.overflow = '';
+    document.documentElement.style.overflow = '';
+  }
+
+  renderVals() {
+    const active = this.props.active || 'home';
+    const col = (k) => (active === k ? '#1E3A8A' : '#4B5563');
+    const bg = (k) => (active === k ? '#F1F4F9' : 'transparent');
+    const line = (k) => (active === k ? '#1E3A8A' : 'transparent');
+    return {
+      showDesktop: !this.state.mobile,
+      showMobile: this.state.mobile,
+      menuOpen: this.state.mobile && this.state.open,
+      isOpen: this.state.open,
+      burgerIcon: this.state.open ? 'fa-solid fa-xmark' : 'fa-solid fa-bars',
+      toggle: () => this.setState((s) => ({ open: !s.open })),
+      modalOpen: this.state.modal,
+      sent: this.state.sent,
+      close: () => this.closeModal(),
+      backdropClick: () => this.closeModal(),
+      stop: (e) => e.stopPropagation(),
+      homeColor: col('home'), aboutColor: col('about'), servicesColor: col('services'), contactColor: col('contact'),
+      homeBg: bg('home'), aboutBg: bg('about'), servicesBg: bg('services'), contactBg: bg('contact'),
+      homeLine: line('home'), aboutLine: line('about'), servicesLine: line('services'), contactLine: line('contact'),
+      featuresLine: line('features'), enterpriseLine: line('enterprise'),
+      featuresColor: col('features'), enterpriseColor: col('enterprise'),
+      submit: (e) => {
+        e.preventDefault();
+        const f = e.target;
+        const get = (n) => (f.elements[n] && f.elements[n].value ? f.elements[n].value.trim() : '');
+        const name = get('name');
+        const body = [
+          'Name: ' + name,
+          'Email: ' + get('email'),
+          'Company: ' + get('company'),
+          'Phone: ' + get('phone'),
+          '',
+          'Message:',
+          get('message')
+        ].join('\n');
+        window.location.href = 'mailto:capricornconsultancy@outlook.com?subject=' +
+          encodeURIComponent('Website enquiry from ' + (name || 'website visitor')) +
+          '&body=' + encodeURIComponent(body);
+        this.setState({ sent: true });
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
