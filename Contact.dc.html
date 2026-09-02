@@ -40,7 +40,7 @@
   </section>
 
   <section aria-labelledby="contact-details" style="background: #F6F7F9;">
-    <div style="maxWidth: 1240px; margin: 0 auto; padding: clamp(24px, 3vw, 40px) 22px clamp(48px, 6vw, 88px); display: grid; gridTemplateColumns: repeat(auto-fit, minmax(320px, 1fr)); gap: clamp(24px, 3vw, 40px); alignItems: start;">
+    <div style="maxWidth: 1240px; margin: 0 auto; padding: clamp(24px, 3vw, 40px) 22px clamp(48px, 6vw, 88px); display: grid; gridTemplateColumns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: clamp(24px, 3vw, 40px); alignItems: start;">
       <div style="display: flex; flexDirection: column; gap: 20px;">
         <h2 id="contact-details" style="fontSize: clamp(22px, 2.6vw, 30px); lineHeight: 1.2;">Contact details</h2>
         <div style="display: grid; gap: 14px;">
@@ -54,8 +54,30 @@
           </a>
           <a href="mailto:capricornconsultancy@outlook.com" style="display: flex; gap: 16px; alignItems: center; background: #ffffff; border: 1px solid #E9ECF2; borderRadius: 20px; padding: 20px 22px; color: #0D1B2A;" style-hover="border-color: #0D1B2A; color: #0D1B2A;">
             <span style="width: 46px; height: 46px; flexShrink: 0; borderRadius: 14px; background: #EEF2FF; color: #1E3A8A; display: flex; alignItems: center; justifyContent: center; fontSize: 16px;"><i class="fa-solid fa-envelope"></i></span>
-            <span style="minWidth: 0;"><span style="display: block; fontSize: 12.5px; color: #6B7280; marginBottom: 3px;">Email</span><span style="fontSize: 15.5px; fontWeight: 600; wordBreak: break-word;">capricornconsultancy@outlook.com</span></span>
+            <span style="minWidth: 0;"><span style="display: block; fontSize: 12.5px; color: #6B7280; marginBottom: 3px;">Email</span><span style="fontSize: clamp(12.5px, 3.6vw, 15.5px); fontWeight: 600; whiteSpace: nowrap;">capricornconsultancy@outlook.com</span></span>
           </a>
+          <div style="display: flex; gap: 16px; alignItems: center; background: #ffffff; border: 1px solid #E9ECF2; borderRadius: 20px; padding: 20px 22px; color: #0D1B2A;">
+            <span style="width: 46px; height: 46px; flexShrink: 0; borderRadius: 14px; background: #E6FBFB; color: #0EA5AA; display: flex; alignItems: center; justifyContent: center; fontSize: 17px;"><i class="fa-solid fa-clock"></i></span>
+            <span><span style="display: block; fontSize: 12.5px; color: #6B7280; marginBottom: 3px;">Business hours</span><span style="fontSize: 15px; fontWeight: 600;">Mon to Sat, 9:30 AM to 6:30 PM</span></span>
+          </div>
+        </div>
+
+        <div style="background: #0D1B2A; borderRadius: 24px; padding: clamp(24px, 3vw, 30px); display: flex; flexDirection: column; gap: 18px; marginTop: 6px;">
+          <h3 style="fontSize: 16.5px; color: #ffffff;">What happens after you reach out</h3>
+          <div style="display: grid; gap: 16px;">
+            <div style="display: flex; gap: 14px; alignItems: flex-start;">
+              <span style="width: 26px; height: 26px; flexShrink: 0; borderRadius: 50%; background: #0EA5AA; color: #0D1B2A; display: flex; alignItems: center; justifyContent: center; fontSize: 12.5px; fontWeight: 700; fontFamily: Poppins, Helvetica, Arial, sans-serif;">1</span>
+              <p style="margin: 0; fontSize: 13.5px; lineHeight: 1.65; color: #C9D2E0;">We reply within one business day with a few clarifying questions.</p>
+            </div>
+            <div style="display: flex; gap: 14px; alignItems: flex-start;">
+              <span style="width: 26px; height: 26px; flexShrink: 0; borderRadius: 50%; background: #0EA5AA; color: #0D1B2A; display: flex; alignItems: center; justifyContent: center; fontSize: 12.5px; fontWeight: 700; fontFamily: Poppins, Helvetica, Arial, sans-serif;">2</span>
+              <p style="margin: 0; fontSize: 13.5px; lineHeight: 1.65; color: #C9D2E0;">A free call to understand your process and what is slowing it down.</p>
+            </div>
+            <div style="display: flex; gap: 14px; alignItems: flex-start;">
+              <span style="width: 26px; height: 26px; flexShrink: 0; borderRadius: 50%; background: #0EA5AA; color: #0D1B2A; display: flex; alignItems: center; justifyContent: center; fontSize: 12.5px; fontWeight: 700; fontFamily: Poppins, Helvetica, Arial, sans-serif;">3</span>
+              <p style="margin: 0; fontSize: 13.5px; lineHeight: 1.65; color: #C9D2E0;">A straight answer on scope and cost, in writing, before anything is committed.</p>
+            </div>
+          </div>
         </div>
       </div>
 

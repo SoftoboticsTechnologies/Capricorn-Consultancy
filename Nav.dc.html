@@ -28,9 +28,9 @@
 </style>
 </helmet>
 <header style="position: sticky; top: 0; zIndex: 100; width: 100%; background: rgba(246,247,249,0.86); backdropFilter: blur(14px); borderBottom: 1px solid #E9ECF2;">
-  <nav aria-label="Main navigation" style="maxWidth: 1240px; margin: 0 auto; padding: 16px 22px; display: flex; alignItems: center; gap: 20px;">
-    <a href="index.html" aria-label="Capricorn Consultancy home" style="display: flex; alignItems: center; flexShrink: 0; marginRight: auto;">
-      <img src="assets/capricorn-logo.png" alt="Capricorn Consultancy logo: business consultancy and software solutions partner" style="height: 48px; width: auto; display: block;">
+  <nav aria-label="Main navigation" style="maxWidth: 1240px; margin: 0 auto; padding: clamp(12px, 3vw, 16px) clamp(14px, 4vw, 22px); display: flex; alignItems: center; gap: clamp(10px, 3vw, 20px);">
+    <a href="index.html" aria-label="Capricorn Consultancy home" style="display: flex; alignItems: center; flexShrink: 0; marginRight: auto; minWidth: 0;">
+      <img src="assets/capricorn-logo-bgremoved.png" alt="Capricorn Consultancy logo: business consultancy and software solutions partner" style="height: clamp(24px, 7vw, 48px); width: auto; maxWidth: 100%; display: block;">
     </a>
     <sc-if value="{{ showDesktop }}" hint-placeholder-val="{{ true }}">
       <div style="position: absolute; left: 50%; transform: translateX(-50%); display: flex; alignItems: center; gap: 30px;">
@@ -38,7 +38,7 @@
         <a href="About.dc.html" style="fontSize: 14.5px; fontWeight: 500; paddingBottom: 4px; borderBottom: 2px solid {{ aboutLine }}; color: {{ aboutColor }}; whiteSpace: nowrap;" style-hover="color: #0EA5AA;">About Us</a>
         <a href="Services.dc.html" style="fontSize: 14.5px; fontWeight: 500; paddingBottom: 4px; borderBottom: 2px solid {{ servicesLine }}; color: {{ servicesColor }}; whiteSpace: nowrap;" style-hover="color: #0EA5AA;">Services</a>
         <a href="Features.dc.html" style="fontSize: 14.5px; fontWeight: 500; paddingBottom: 4px; borderBottom: 2px solid {{ featuresLine }}; color: {{ featuresColor }}; whiteSpace: nowrap;" style-hover="color: #0EA5AA;">Features</a>
-        <a href="Enterprise.dc.html" style="fontSize: 14.5px; fontWeight: 500; paddingBottom: 4px; borderBottom: 2px solid {{ enterpriseLine }}; color: {{ enterpriseColor }}; whiteSpace: nowrap;" style-hover="color: #0EA5AA;">Enterprise</a>
+        <a href="Partners.dc.html" style="fontSize: 14.5px; fontWeight: 500; paddingBottom: 4px; borderBottom: 2px solid {{ partnersLine }}; color: {{ partnersColor }}; whiteSpace: nowrap;" style-hover="color: #0EA5AA;">Partners</a>
         <a href="Contact.dc.html" style="fontSize: 14.5px; fontWeight: 500; paddingBottom: 4px; borderBottom: 2px solid {{ contactLine }}; color: {{ contactColor }}; whiteSpace: nowrap;" style-hover="color: #0EA5AA;">Contact Us</a>
       </div>
       <div style="display: flex; alignItems: center; flexShrink: 0;">
@@ -46,9 +46,9 @@
       </div>
     </sc-if>
     <sc-if value="{{ showMobile }}" hint-placeholder-val="{{ false }}">
-      <div style="display: flex; alignItems: center; gap: 10px;">
-        <button type="button" data-enquiry="true" style="background: #0D1B2A; color: #ffffff; padding: 12px 20px; borderRadius: 8px; fontSize: 14px; fontWeight: 600; fontFamily: Poppins, Helvetica, Arial, sans-serif; border: none; cursor: pointer;" style-hover="background: #1E3A8A;">Get in Touch</button>
-        <button type="button" aria-label="Toggle navigation menu" aria-expanded="{{ isOpen }}" onClick="{{ toggle }}" style="width: 46px; height: 46px; display: flex; alignItems: center; justifyContent: center; background: #ffffff; border: 1px solid #E9ECF2; borderRadius: 8px; color: #0D1B2A; fontSize: 19px; cursor: pointer;">
+      <div style="display: flex; alignItems: center; gap: clamp(6px, 2vw, 10px); flexShrink: 0;">
+        <button type="button" data-enquiry="true" style="background: #0D1B2A; color: #ffffff; padding: clamp(9px, 2.4vw, 12px) clamp(12px, 3.6vw, 20px); borderRadius: 8px; fontSize: clamp(12px, 3vw, 14px); fontWeight: 600; fontFamily: Poppins, Helvetica, Arial, sans-serif; border: none; cursor: pointer; whiteSpace: nowrap;" style-hover="background: #1E3A8A;">Get in Touch</button>
+        <button type="button" aria-label="Toggle navigation menu" aria-expanded="{{ isOpen }}" onClick="{{ toggle }}" style="width: clamp(38px, 10vw, 46px); height: clamp(38px, 10vw, 46px); flexShrink: 0; display: flex; alignItems: center; justifyContent: center; background: #ffffff; border: 1px solid #E9ECF2; borderRadius: 8px; color: #0D1B2A; fontSize: 17px; cursor: pointer;">
           <i class="{{ burgerIcon }}"></i>
         </button>
       </div>
@@ -60,7 +60,7 @@
       <a href="About.dc.html" style="padding: 14px 12px; fontSize: 16px; fontWeight: 500; color: #0D1B2A; borderRadius: 8px;" style-hover="background: #F1F4F9; color: #1E3A8A;">About Us</a>
       <a href="Services.dc.html" style="padding: 14px 12px; fontSize: 16px; fontWeight: 500; color: #0D1B2A; borderRadius: 8px;" style-hover="background: #F1F4F9; color: #1E3A8A;">Services</a>
       <a href="Features.dc.html" style="padding: 14px 12px; fontSize: 16px; fontWeight: 500; color: #0D1B2A; borderRadius: 8px;" style-hover="background: #F1F4F9; color: #1E3A8A;">Features</a>
-      <a href="Enterprise.dc.html" style="padding: 14px 12px; fontSize: 16px; fontWeight: 500; color: #0D1B2A; borderRadius: 8px;" style-hover="background: #F1F4F9; color: #1E3A8A;">Enterprise</a>
+      <a href="Partners.dc.html" style="padding: 14px 12px; fontSize: 16px; fontWeight: 500; color: #0D1B2A; borderRadius: 8px;" style-hover="background: #F1F4F9; color: #1E3A8A;">Partners</a>
       <a href="Contact.dc.html" style="padding: 14px 12px; fontSize: 16px; fontWeight: 500; color: #0D1B2A; borderRadius: 12px;" style-hover="background: #F1F4F9; color: #1E3A8A;">Contact Us</a>
     </div>
   </sc-if>
@@ -106,7 +106,7 @@
   </div>
 </sc-if>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1240,&quot;height&quot;:120},&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;about&quot;,&quot;services&quot;,&quot;contact&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1240,&quot;height&quot;:120},&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;about&quot;,&quot;services&quot;,&quot;features&quot;,&quot;partners&quot;,&quot;contact&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
 class Component extends DCLogic {
   state = { mobile: false, open: false, modal: false, sent: false };
 
@@ -180,8 +180,8 @@ class Component extends DCLogic {
       homeColor: col('home'), aboutColor: col('about'), servicesColor: col('services'), contactColor: col('contact'),
       homeBg: bg('home'), aboutBg: bg('about'), servicesBg: bg('services'), contactBg: bg('contact'),
       homeLine: line('home'), aboutLine: line('about'), servicesLine: line('services'), contactLine: line('contact'),
-      featuresLine: line('features'), enterpriseLine: line('enterprise'),
-      featuresColor: col('features'), enterpriseColor: col('enterprise'),
+      featuresLine: line('features'), partnersLine: line('partners'),
+      featuresColor: col('features'), partnersColor: col('partners'),
       submit: (e) => {
         e.preventDefault();
         const f = e.target;
