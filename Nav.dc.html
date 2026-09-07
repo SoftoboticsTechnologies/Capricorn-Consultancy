@@ -16,7 +16,7 @@
   body { margin: 0; font-family: Inter, Helvetica, Arial, sans-serif; color: #0D1B2A; background: #F6F7F9; -webkit-font-smoothing: antialiased; }
   * { box-sizing: border-box; }
   a { color: #1E3A8A; text-decoration: none; }
-  a:hover { color: #0EA5AA; }
+  a:hover { color: #2F80ED; }
   h1, h2, h3, h4 { font-family: Poppins, Helvetica, Arial, sans-serif; font-weight: 700; text-wrap: pretty; margin: 0; letter-spacing: -0.4px; }
   p { text-wrap: pretty; }
   img { max-width: 100%; }
@@ -34,12 +34,12 @@
     </a>
     <sc-if value="{{ showDesktop }}" hint-placeholder-val="{{ true }}">
       <div style="position: absolute; left: 50%; transform: translateX(-50%); display: flex; alignItems: center; gap: 30px;">
-        <a href="index.html" style="fontSize: 16.5px; fontWeight: 500; paddingBottom: 4px; borderBottom: 2px solid {{ homeLine }}; color: {{ homeColor }}; whiteSpace: nowrap;" style-hover="color: #0EA5AA;">Home</a>
-        <a href="About.dc.html" style="fontSize: 16.5px; fontWeight: 500; paddingBottom: 4px; borderBottom: 2px solid {{ aboutLine }}; color: {{ aboutColor }}; whiteSpace: nowrap;" style-hover="color: #0EA5AA;">About Us</a>
-        <a href="Services.dc.html" style="fontSize: 16.5px; fontWeight: 500; paddingBottom: 4px; borderBottom: 2px solid {{ servicesLine }}; color: {{ servicesColor }}; whiteSpace: nowrap;" style-hover="color: #0EA5AA;">Services</a>
-        <a href="Features.dc.html" style="fontSize: 16.5px; fontWeight: 500; paddingBottom: 4px; borderBottom: 2px solid {{ featuresLine }}; color: {{ featuresColor }}; whiteSpace: nowrap;" style-hover="color: #0EA5AA;">Features</a>
-        <a href="Partners.dc.html" style="fontSize: 16.5px; fontWeight: 500; paddingBottom: 4px; borderBottom: 2px solid {{ partnersLine }}; color: {{ partnersColor }}; whiteSpace: nowrap;" style-hover="color: #0EA5AA;">Partners</a>
-        <a href="Contact.dc.html" style="fontSize: 16.5px; fontWeight: 500; paddingBottom: 4px; borderBottom: 2px solid {{ contactLine }}; color: {{ contactColor }}; whiteSpace: nowrap;" style-hover="color: #0EA5AA;">Contact Us</a>
+        <a href="index.html" style="fontSize: 18.5px; fontWeight: 500; paddingBottom: 4px; borderBottom: 2px solid {{ homeLine }}; color: {{ homeColor }}; whiteSpace: nowrap;" style-hover="color: #2F80ED;">Home</a>
+        <a href="About.dc.html" style="fontSize: 18.5px; fontWeight: 500; paddingBottom: 4px; borderBottom: 2px solid {{ aboutLine }}; color: {{ aboutColor }}; whiteSpace: nowrap;" style-hover="color: #2F80ED;">About Us</a>
+        <a href="Services.dc.html" style="fontSize: 18.5px; fontWeight: 500; paddingBottom: 4px; borderBottom: 2px solid {{ servicesLine }}; color: {{ servicesColor }}; whiteSpace: nowrap;" style-hover="color: #2F80ED;">Services</a>
+        <a href="Features.dc.html" style="fontSize: 18.5px; fontWeight: 500; paddingBottom: 4px; borderBottom: 2px solid {{ featuresLine }}; color: {{ featuresColor }}; whiteSpace: nowrap;" style-hover="color: #2F80ED;">Features</a>
+        <a href="Partners.dc.html" style="fontSize: 18.5px; fontWeight: 500; paddingBottom: 4px; borderBottom: 2px solid {{ partnersLine }}; color: {{ partnersColor }}; whiteSpace: nowrap;" style-hover="color: #2F80ED;">Partners</a>
+        <a href="Contact.dc.html" style="fontSize: 18.5px; fontWeight: 500; paddingBottom: 4px; borderBottom: 2px solid {{ contactLine }}; color: {{ contactColor }}; whiteSpace: nowrap;" style-hover="color: #2F80ED;">Contact Us</a>
       </div>
       <div style="display: flex; alignItems: center; flexShrink: 0;">
         <button type="button" data-enquiry="true" style="background: #0D1B2A; color: #ffffff; padding: 13px 26px; borderRadius: 8px; fontSize: 14.5px; fontWeight: 600; fontFamily: Poppins, Helvetica, Arial, sans-serif; border: none; cursor: pointer; transition: background 0.2s ease;" style-hover="background: #1E3A8A;">Get in Touch</button>
@@ -70,7 +70,7 @@
     <div onClick="{{ stop }}" style="width: 100%; maxWidth: 520px; marginTop: 5vh; marginBottom: 40px; background: #ffffff; borderRadius: 24px; padding: clamp(26px, 4vw, 38px); boxShadow: 0 40px 90px rgba(9,16,26,0.4); animation: capricorn-modal-in 0.24s cubic-bezier(0.2, 0.8, 0.2, 1);">
       <div style="display: flex; alignItems: flex-start; justifyContent: space-between; gap: 18px; marginBottom: 8px;">
         <div>
-          <span style="display: inline-flex; alignItems: center; gap: 8px; fontSize: 12px; fontWeight: 600; letterSpacing: 1.4px; textTransform: uppercase; color: #0EA5AA;"><span style="width: 6px; height: 6px; borderRadius: 50%; background: #0EA5AA;"></span>Enquiry</span>
+          <span style="display: inline-flex; alignItems: center; gap: 8px; fontSize: 12px; fontWeight: 600; letterSpacing: 1.4px; textTransform: uppercase; color: #2F80ED;"><span style="width: 6px; height: 6px; borderRadius: 50%; background: #2F80ED;"></span>Enquiry</span>
           <h2 style="fontSize: 25px; lineHeight: 1.25; marginTop: 12px;">Send us a message</h2>
         </div>
         <button type="button" aria-label="Close enquiry form" onClick="{{ close }}" style="flexShrink: 0; width: 40px; height: 40px; borderRadius: 50%; background: #F1F4F9; border: none; color: #0D1B2A; fontSize: 16px; cursor: pointer; display: flex; alignItems: center; justifyContent: center;" style-hover="background: #E4E9F1;"><i class="fa-solid fa-xmark"></i></button>
@@ -99,7 +99,7 @@
         </label>
         <button type="submit" style="width: 100%; padding: 15px 24px; background: #0D1B2A; color: #ffffff; border: none; borderRadius: 8px; fontSize: 15.5px; fontWeight: 600; fontFamily: Poppins, Helvetica, Arial, sans-serif; cursor: pointer; transition: background 0.2s ease;" style-hover="background: #1E3A8A;">Send Message</button>
         <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
-          <p style="margin: 0; fontSize: 13.5px; lineHeight: 1.7; color: #0F766E; background: #E6FBFB; border: 1px solid #A9E6E8; borderRadius: 12px; padding: 13px 15px;">Your email application should now be open with the message ready to send. If nothing opened, write to us at capricornconsultancy@outlook.com.</p>
+          <p style="margin: 0; fontSize: 13.5px; lineHeight: 1.7; color: #1D4ED8; background: #EAF2FE; border: 1px solid #BFD7FB; borderRadius: 12px; padding: 13px 15px;">Your email application should now be open with the message ready to send. If nothing opened, write to us at capricornconsultancy@outlook.com.</p>
         </sc-if>
       </form>
     </div>
