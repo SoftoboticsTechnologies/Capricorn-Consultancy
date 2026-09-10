@@ -28,8 +28,8 @@
 </style>
 </helmet>
 <header style="position: sticky; top: 0; zIndex: 100; width: 100%; background: rgba(246,247,249,0.86); backdropFilter: blur(14px); borderBottom: 1px solid #E9ECF2;">
-  <nav aria-label="Main navigation" style="padding: clamp(12px, 3vw, 16px) clamp(14px, 4vw, 22px) clamp(12px, 3vw, 16px) clamp(34px, 6vw, 60px); display: flex; alignItems: center; gap: clamp(10px, 3vw, 20px);">
-    <a href="index.html" aria-label="Capricorn Consultancy home" style="display: flex; alignItems: center; flexShrink: 0; marginRight: auto; minWidth: 0;">
+  <nav aria-label="Main navigation" style="padding: clamp(12px, 3vw, 16px) clamp(14px, 4vw, 22px) clamp(12px, 3vw, 16px) {{ navPadLeft }}; display: flex; alignItems: center; gap: clamp(10px, 3vw, 20px);">
+    <a href="index.html" aria-label="Capricorn Consultancy home" style="display: flex; alignItems: center; flexShrink: 0; minWidth: 0;">
       <img src="assets/capricorn-logo-bgremoved.png" alt="Capricorn Consultancy logo: business consultancy and software solutions partner" style="height: clamp(34px, 9.5vw, 58px); width: auto; maxWidth: 100%; display: block;">
     </a>
     <sc-if value="{{ showDesktop }}" hint-placeholder-val="{{ true }}">
@@ -46,11 +46,13 @@
       </div>
     </sc-if>
     <sc-if value="{{ showMobile }}" hint-placeholder-val="{{ false }}">
-      <div style="display: flex; alignItems: center; gap: clamp(5px, 1.6vw, 10px); flexShrink: 0;">
-        <button type="button" data-enquiry="true" style="background: #0D1B2A; color: #ffffff; padding: clamp(8px, 2.2vw, 12px) clamp(10px, 3vw, 20px); borderRadius: 8px; fontSize: clamp(11px, 2.8vw, 14px); fontWeight: 600; fontFamily: Poppins, Helvetica, Arial, sans-serif; border: none; cursor: pointer; whiteSpace: nowrap;" style-hover="background: #1E3A8A;">Get in Touch</button>
+      <div style="flex: 1 1 auto; minWidth: 0; display: flex; alignItems: center; justifyContent: center;">
         <button type="button" aria-label="Toggle navigation menu" aria-expanded="{{ isOpen }}" onClick="{{ toggle }}" style="width: clamp(34px, 9vw, 46px); height: clamp(34px, 9vw, 46px); flexShrink: 0; display: flex; alignItems: center; justifyContent: center; background: #ffffff; border: 1px solid #E9ECF2; borderRadius: 8px; color: #0D1B2A; fontSize: 16px; cursor: pointer;">
           <i class="{{ burgerIcon }}"></i>
         </button>
+      </div>
+      <div style="display: flex; alignItems: center; flexShrink: 0; marginLeft: clamp(10px, 3vw, 18px);">
+        <button type="button" data-enquiry="true" style="background: #0D1B2A; color: #ffffff; padding: clamp(8px, 2.2vw, 12px) clamp(10px, 3vw, 20px); borderRadius: 8px; fontSize: clamp(11px, 2.8vw, 14px); fontWeight: 600; fontFamily: Poppins, Helvetica, Arial, sans-serif; border: none; cursor: pointer; whiteSpace: nowrap;" style-hover="background: #1E3A8A;">Get in Touch</button>
       </div>
     </sc-if>
   </nav>
@@ -168,6 +170,7 @@ class Component extends DCLogic {
     return {
       showDesktop: !this.state.mobile,
       showMobile: this.state.mobile,
+      navPadLeft: this.state.mobile ? 'clamp(14px, 4vw, 22px)' : 'clamp(34px, 6vw, 60px)',
       menuOpen: this.state.mobile && this.state.open,
       isOpen: this.state.open,
       burgerIcon: this.state.open ? 'fa-solid fa-xmark' : 'fa-solid fa-bars',
